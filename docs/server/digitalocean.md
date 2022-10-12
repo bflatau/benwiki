@@ -26,8 +26,9 @@ nav_order: 2
 
 ## RE-ISSUING CERTS
 
-1. Stop webserver and remove associated files with `docker system prune`
-2. Start webserver again (part of the compose re-issues certs):
+1. Stop webserver and remove the container `docker stop webserver` || `docker rm webserver`
+2. Just to be safe, clean out all of the misc. unused files/associations `docker system prune`
+3. Start webserver again (part of the compose re-issues certs):
 `docker-compose -f docker-compose-webserver.yml up -d`
 
 
