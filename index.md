@@ -56,8 +56,11 @@ That’s it you now can ssh with a key rather than a password.
 
 Regards, KDSys
 
-## NGINX WIREGURAD TUNNEL
+## NGINX WIREGUARD TUNNEL
 
+NGINX SETUP
+
+https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04
 
 server {
         listen 80;
