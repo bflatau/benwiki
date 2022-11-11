@@ -55,3 +55,36 @@ service ssh restart
 That’s it you now can ssh with a key rather than a password.
 
 Regards, KDSys
+
+## NGINX WIREGURAD TUNNEL
+
+
+server {
+        listen 80;
+        listen [::]:80;
+
+        root /var/www/URL/html;
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name URL.com www.URL.com;
+
+#        location / {
+#                try_files @backend $uri $uri/ =404; 
+#        }
+
+        location / {
+                proxy_intercept_errors on;
+                proxy_pass http://XX.XX.XX.XX:5000;
+                error_page 404 502 503 504 /index.html;
+        }
+
+        location /index {
+                internal;
+                root /var/www/URL/html;
+                index index.html;
+        }
+
+
+
+}
+
