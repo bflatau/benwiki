@@ -30,6 +30,7 @@ nav_order: 2
 2. Just to be safe, clean out all of the misc. unused files/associations `docker system prune`
 3. Start webserver again (part of the compose re-issues certs):
 `docker-compose -f docker-compose-webserver.yml up -d`
+4. Sometimes you may need to restart the webserver for the changes to take effect: `docker restart webserver`
 
 
 ## NOTES:
